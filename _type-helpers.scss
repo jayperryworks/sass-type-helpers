@@ -1,0 +1,23 @@
+// tweak-able modular scale
+// -> http://www.modularscale.com
+$font-scale: 13px 16px 19px 26px 30px 42px 48px 68px 78px 110px;
+
+@function fs($step) {
+    @return nth($font-scale, $step);
+}
+
+@mixin font-scale($step, $unit: "rem") {
+    @if ($unit == "rem") {
+        @include rem(font-size, fs($step));
+    } @elseif ($unit == "em") {
+        @include em(font-size, fs($step));
+    } @else {
+        font-size: fs($step);
+    }
+}
+
+// headers selector helper
+// -> USAGE: #{headers()} { }
+@function headers() {
+    @return "h1, h2, h3, h4, h5, h6";
+}
