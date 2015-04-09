@@ -1,7 +1,7 @@
 {
   "name": "sass-type-helpers",
   "version": "0.0.1",
-  "main": "_helpers-type.scss",
+  "main": "_type-helpers.scss",
   "ignore": [
     "**/.*",
     "README.md",
