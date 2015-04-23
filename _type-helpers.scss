@@ -19,6 +19,10 @@ $font-scale: 13px 16px 19px 26px 30px 42px 48px 68px 78px 110px !default;
 
 // headers selector helper
 // -> USAGE: #{headers()} { }
-@function headers() {
-    @return "h1, h2, h3, h4, h5, h6";
+@function headers($selector: false) {
+    @if ($selector == false) {
+        @return "h1, h2, h3, h4, h5, h6";
+    } @else {
+        @return "h1 #{$selector}, h2 #{$selector}, h3 #{$selector}, h4 #{$selector}, h5 #{$selector}, h6 #{$selector}";
+    }
 }
